@@ -164,6 +164,11 @@ function drawMap() {
           // Use fill fonction to draw in blue
           // Use rect fonction to draw a rectangle
           break;
+        case " ":
+          // pacgum
+          fill(255, 255, 0);
+          circle(x * tileSize + tileSize / 2, y * tileSize + tileSize / 2, 5);
+          break;
         case "P":
           // Call drawPacman function
           break;
@@ -269,11 +274,16 @@ function move() {
       break;
     // ...
   }
-  // We check if the next position is valid (not a wall)
-  // ...
-  // If it is valid, we update the map
-  map[y] = map[y].replaceAt(x, "!");
-  map[nextPosition.y] = map[nextPosition.y].replaceAt(nextPosition.x, "P");
+  // We check if the next position is a ghost, if it is, the game is over
+  if (/* ... */) {
+    window.alert("Game Over");
+    window.location.reload();
+  }
+  // We check if the next position is valid (not a wall), If it is valid, we update the map
+  if (/* ... */) {
+    map[y] = map[y].replaceAt(x, "!");
+    map[nextPosition.y] = map[nextPosition.y].replaceAt(nextPosition.x, "P");
+  }
 }
 ```
 
@@ -312,7 +322,7 @@ function getGhostPositions() {
 }
 ```
 
-Ensuite, ajoutez la fonction `isValidMove()` et `·moveGhosts()` dans sketch.js.
+Ensuite, ajoutez la fonction `isValidMove()` et `moveGhosts()` dans sketch.js.
 
 ```js
 function moveGhosts() {
@@ -336,7 +346,8 @@ function moveGhosts() {
 
     // You have to code the isValidMove function
     if (isValidMove(nextX, nextY)) {
-      if (map[nextY][nextX] === "P") {
+      // If the next position is the position of Pacman, the game is over
+      if (/* ... */) {
         window.alert("Game Over");
         window.location.reload();
       }
