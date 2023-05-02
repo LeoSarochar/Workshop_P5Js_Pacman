@@ -312,7 +312,7 @@ function getGhostPositions() {
 }
 ```
 
-Ensuite, ajoutez la fonction `isValidMove()` et `·moveGhosts()` dans sketch.js.
+Ensuite, ajoutez la fonction `isValidMove()` et `moveGhosts()` dans sketch.js.
 
 ```js
 function moveGhosts() {
