@@ -89,10 +89,10 @@ Ajoutez la fonction `drawMap()` dans sketch.js. Cette fonction permet de dessine
 La position du rectangle doit être
 
 ```
-x = x * titleSize
-y = y * titleSize
-w = titleSize
-h = titleSize
+x = x * tileSize
+y = y * tileSize
+w = tileSize
+h = tileSize
 ```
 
 ```js
